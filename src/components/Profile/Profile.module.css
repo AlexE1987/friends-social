@@ -2,10 +2,3 @@
   grid-area: c;
   background-color: lightskyblue;
 }
-
-.item {
-  color: blue;
-}
-.active {
-  color: gold;
-}
