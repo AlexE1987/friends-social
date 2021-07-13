@@ -2,11 +2,15 @@ import Post from './Post/Post';
 import s from './Posts.module.css';
 const Posts = () => {
   return (
-    <div>
-      My posts
+    <div className={s.postsBlock}>
+      <h3>My posts</h3>
       <div>
-        <textarea></textarea>
-        <button>Add post</button>
+        <div className="">
+          <textarea></textarea>
+        </div>
+        <div className="">
+          <button>Add post</button>
+        </div>
       </div>
       <div className={s.posts}>
         <Post message="hi" likeCounts="15" />
