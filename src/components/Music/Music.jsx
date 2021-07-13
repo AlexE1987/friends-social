@@ -1,4 +1,4 @@
-import s from './Music.modules.css';
+import s from './Music.module.css';
 const Music = () => {
   return <div className="">Music</div>;
 };
