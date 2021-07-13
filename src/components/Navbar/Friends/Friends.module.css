@@ -12,10 +12,3 @@
 .item a.activeLink {
   color: gold;
 }
-
-.imgTest {
-  width: 20px;
-  height: 20px;
-  background-color: yellow;
-  border-radius: 50%;
-}
