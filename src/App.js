@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Dialogs from './components/Dialogs/Dialogs copy';
+import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
 import NavBar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
