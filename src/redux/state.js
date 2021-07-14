@@ -1,5 +1,15 @@
 import { rerenderEntireTree } from '../render';
 const state = {
+  profilePage: {
+    posts: [
+      { id: 1, message: 'Hi', likeCounts: 1 },
+      { id: 2, message: 'Bye', likeCounts: 22 },
+      { id: 3, message: 'Yes', likeCounts: 12 },
+      { id: 4, message: 'Ok', likeCounts: 133 },
+    ],
+    newPostText: 'my text',
+  },
+
   dialogsPage: {
     dialogs: [
       { id: 1, name: 'Alex' },
@@ -14,14 +24,7 @@ const state = {
       { id: 4, message: 'Ok' },
     ],
   },
-  profilePage: {
-    posts: [
-      { id: 1, message: 'Hi', likeCounts: 1 },
-      { id: 2, message: 'Bye', likeCounts: 22 },
-      { id: 3, message: 'Yes', likeCounts: 12 },
-      { id: 4, message: 'Ok', likeCounts: 133 },
-    ],
-  },
+
   sidebar: {
     friends: [
       { id: 1, name: 'Alex' },
@@ -32,9 +35,15 @@ const state = {
   },
 };
 
-export let addPost = (postMessage) => {
-  let newPost = { id: 0, message: postMessage, likeCounts: 21 };
+export let addPost = () => {
+  let newPost = { id: 0, message: state.profilePage.newPostText, likeCounts: 21 };
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = '';
+  rerenderEntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
   rerenderEntireTree(state);
 };
 
