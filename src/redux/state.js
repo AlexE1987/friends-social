@@ -1,4 +1,4 @@
-export const state = {
+const state = {
   dialogsPage: {
     dialogs: [
       { id: 1, name: 'Alex' },
@@ -30,3 +30,11 @@ export const state = {
     ],
   },
 };
+
+export let addPost = (postMessage) => {
+  debugger;
+  let newPost = { id: 0, message: postMessage, likeCounts: 21 };
+  state.profilePage.posts.push(newPost);
+};
+
+export default state;
