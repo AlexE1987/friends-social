@@ -13,6 +13,7 @@ const Dialogs = (props) => {
     let messageText = messageArea.current.value;
     alert(messageText);
   };
+
   return (
     <div className={s.dialogs}>
       <ul className={s.dialogsItems}>{dialogsElements}</ul>
