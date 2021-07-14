@@ -1,16 +1,20 @@
 import React from 'react';
 
-import Post from './Post/Post';
+import MyPost from './MyPost/Post';
 
-import s from './Posts.module.css';
-const Posts = (props) => {
-  let postsElement = props.posts.map((p) => <Post message={p.message} likeCounts={p.likeCounts} />);
+import s from './MyPosts.module.css';
+const MyPosts = (props) => {
+  let postsElement = props.posts.map((p) => (
+    <MyPost message={p.message} likeCounts={p.likeCounts} />
+  ));
   let newPostElement = React.createRef();
+
   let addPost = () => {
     let text = newPostElement.current.value;
     props.addPost(text);
     newPostElement.current.value = '';
   };
+
   return (
     <div className={s.postsBlock}>
       <h3>My posts</h3>
@@ -27,4 +31,4 @@ const Posts = (props) => {
   );
 };
 
-export default Posts;
+export default MyPosts;

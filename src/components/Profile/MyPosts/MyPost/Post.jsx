@@ -1,5 +1,5 @@
-import s from './Post.module.css';
-const Post = (props) => {
+import s from './MyPost.module.css';
+const MyPost = (props) => {
   return (
     <div className={s.item}>
       <img
@@ -14,4 +14,4 @@ const Post = (props) => {
   );
 };
 
-export default Post;
+export default MyPost;
