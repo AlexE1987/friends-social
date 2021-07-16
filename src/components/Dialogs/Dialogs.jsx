@@ -7,20 +7,17 @@ import { sendMessageActionCreator, updateNewSendTextActionCreator } from '../../
 import s from './Dialogs.module.css';
 
 const Dialogs = (props) => {
-  let dialogsElements = props.dialogsPage.dialogs.map((d) => (
-    <DialogItem id={d.id} name={d.name} />
-  ));
-  let messagesElements = props.dialogsPage.messages.map((m) => <Message message={m.message} />);
+  let state = props.store.getState().dialogsPage;
+  let newMessageText = state.newMessageText;
 
-  // let messageArea = React.createRef();
+  let dialogsElements = state.dialogs.map((d) => <DialogItem id={d.id} name={d.name} />);
+  let messagesElements = state.messages.map((m) => <Message message={m.message} />);
 
   let sendMessage = () => {
     props.dispatch(sendMessageActionCreator());
-    // alert(messageText);
   };
 
   let onSendChange = (e) => {
-    // let messageText = messageArea.current.value;
     let messageText = e.target.value;
     let action = updateNewSendTextActionCreator(messageText);
     props.dispatch(action);
@@ -33,10 +30,7 @@ const Dialogs = (props) => {
       <div className="">
         <h3>Messages</h3>
         <div className="">
-          <textarea
-            // ref={messageArea}
-            onChange={onSendChange}
-            value={props.dialogsPage.newMessageText}></textarea>
+          <textarea onChange={onSendChange} value={newMessageText}></textarea>
         </div>
         <div className="">
           <button onClick={sendMessage}>Send</button>
