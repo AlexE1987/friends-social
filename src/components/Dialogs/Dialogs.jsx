@@ -12,15 +12,16 @@ const Dialogs = (props) => {
   ));
   let messagesElements = props.dialogsPage.messages.map((m) => <Message message={m.message} />);
 
-  let messageArea = React.createRef();
+  // let messageArea = React.createRef();
 
   let sendMessage = () => {
     props.dispatch(sendMessageActionCreator());
     // alert(messageText);
   };
 
-  let onSendChange = () => {
-    let messageText = messageArea.current.value;
+  let onSendChange = (e) => {
+    // let messageText = messageArea.current.value;
+    let messageText = e.target.value;
     let action = updateNewSendTextActionCreator(messageText);
     props.dispatch(action);
   };
@@ -33,7 +34,7 @@ const Dialogs = (props) => {
         <h3>Messages</h3>
         <div className="">
           <textarea
-            ref={messageArea}
+            // ref={messageArea}
             onChange={onSendChange}
             value={props.dialogsPage.newMessageText}></textarea>
         </div>

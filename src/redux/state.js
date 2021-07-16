@@ -62,7 +62,7 @@ let store = {
       this._state.profilePage.newPostText = action.newText;
       this._callSubscriber(this._state);
     } else if (action.type === SEND_MESSAGE) {
-      let newMessage = { id: 4, message: this._state.dialogsPage.newMessageText };
+      let newMessage = { id: 6, message: this._state.dialogsPage.newMessageText };
       this._state.dialogsPage.messages.push(newMessage);
       this._state.dialogsPage.newMessageText = '';
       this._callSubscriber(this._state);
