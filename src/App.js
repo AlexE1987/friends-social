@@ -9,17 +9,24 @@ import News from './components/News/New';
 import Music from './components/Music/Music';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 
-const App = (props) => {
+const App = () => {
+  // debugger;
   return (
     <div className="app-wrapper">
       <Header />
-      <NavBar state={props.state.sidebar} />
+      <NavBar
+      // state={props.store}
+      />
       <div className="app-wrapper-content">
         <Route
           path="/dialogs"
-          render={() => <DialogsContainer store={props.store} dispatch={props.dispatch} />}
+          render={() => (
+            <DialogsContainer
+            // store={props.store} dispatch={props.dispatch}
+            />
+          )}
         />
-        <Route path="/profile" render={() => <Profile store={props.store} />} />
+        <Route path="/profile" render={() => <Profile />} />
         <Route path="/news" component={News} />
         <Route path="/music" component={Music} />
         <Route path="/settings" component={Settings} />
