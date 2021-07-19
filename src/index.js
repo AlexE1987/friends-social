@@ -21,6 +21,5 @@ let rerenderEntireTree = () => {
 rerenderEntireTree(store.getState());
 
 store.subscribe(() => {
-  // let state = store.getState();
   rerenderEntireTree();
 });
