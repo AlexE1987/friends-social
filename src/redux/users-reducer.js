@@ -1,32 +1,33 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
+
 let initialState = {
   users: [
-    {
-      id: 1,
-      photoUrl: 'https://i.pinimg.com/originals/1b/fc/02/1bfc0220938a4050c06ad363dc28657f.png',
-      followed: true,
-      fullName: 'Alex',
-      status: 'Winner',
-      location: { city: 'Saratov', country: 'Russia' },
-    },
-    {
-      id: 2,
-      photoUrl: 'https://i.pinimg.com/originals/1b/fc/02/1bfc0220938a4050c06ad363dc28657f.png',
-      followed: false,
-      fullName: 'Max',
-      status: 'Winner',
-      location: { city: 'Minsk', country: 'Belarus' },
-    },
-    {
-      id: 3,
-      photoUrl: 'https://i.pinimg.com/originals/1b/fc/02/1bfc0220938a4050c06ad363dc28657f.png',
-      followed: true,
-      fullName: 'Den',
-      status: 'Winner',
-      location: { city: 'Kiev', country: 'Ukraine' },
-    },
+    //   {
+    //     id: 1,
+    //     photoUrl: 'https://i.pinimg.com/originals/1b/fc/02/1bfc0220938a4050c06ad363dc28657f.png',
+    //     followed: true,
+    //     fullName: 'Alex',
+    //     status: 'Winner',
+    //     location: { city: 'Saratov', country: 'Russia' },
+    //   },
+    //   {
+    //     id: 2,
+    //     photoUrl: 'https://i.pinimg.com/originals/1b/fc/02/1bfc0220938a4050c06ad363dc28657f.png',
+    //     followed: false,
+    //     fullName: 'Max',
+    //     status: 'Winner',
+    //     location: { city: 'Minsk', country: 'Belarus' },
+    //   },
+    //   {
+    //     id: 3,
+    //     photoUrl: 'https://i.pinimg.com/originals/1b/fc/02/1bfc0220938a4050c06ad363dc28657f.png',
+    //     followed: true,
+    //     fullName: 'Den',
+    //     status: 'Winner',
+    //     location: { city: 'Kiev', country: 'Ukraine' },
+    //   },
   ],
 };
 
