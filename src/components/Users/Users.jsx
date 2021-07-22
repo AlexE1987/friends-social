@@ -4,20 +4,11 @@ import styles from './users.module.css';
 import userPhoto from '../../assets/images/userPhoto.ico';
 
 class Users extends React.Component {
-  constructor(props) {
-    super(props);
+  componentDidMount() {
     axios.get('https://social-network.samuraijs.com/api/1.0/users').then((response) => {
       this.props.setUsers(response.data.items);
     });
   }
-
-  // getUsers = () => {
-  //   if (this.props.users.length === 0) {
-  // axios.get('https://social-network.samuraijs.com/api/1.0/users').then((response) => {
-  //   this.props.setUsers(response.data.items);
-  // });
-  //   }
-  // };
 
   render() {
     return (
