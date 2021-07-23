@@ -22,4 +22,5 @@ const ProfileInfo = (props) => {
 	);
 };
 
+
 export default ProfileInfo;

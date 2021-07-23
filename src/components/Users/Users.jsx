@@ -12,6 +12,7 @@ let Users = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
+    // debugger;
     return (
       <div>
         <div>
@@ -60,6 +61,7 @@ let Users = (props) => {
             <span>
               <span>
                 <div>{u.name}</div>
+                <div>{u.id}</div>
                 <div>{u.status}</div>
               </span>
               <span>
