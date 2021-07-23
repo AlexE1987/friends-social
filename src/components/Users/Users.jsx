@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './users.module.css';
 import userPhoto from '../../assets/images/userPhoto.ico';
 
+
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
@@ -10,7 +11,6 @@ let Users = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-    // debugger;
     return (
       <div>
         <div>
