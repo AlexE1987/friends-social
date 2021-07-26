@@ -1,4 +1,5 @@
 import axios from "axios";
+import {setAuthUserData} from "../redux/auth-reducer";
 
 const instance = axios.create({
 	withCredentials: true,
@@ -15,17 +16,33 @@ export const usersAPI = {
 				return response.data
 			})
 	},
-	followUser(id) {
-		return instance.delete(`follow/${id}`,)
+	follow(userId) {
+		return instance.post(`follow/${userId}`)
 			.then(response => {
 				return response.data
 			})
 	},
-	unfollowUser(id) {
-		return instance.post(`follow/${id}`,)
+	unfollow(userId) {
+		return instance.delete(`follow/${userId}`)
 			.then(response => {
 				return response.data
 			})
+	},
+	getProfile(userId) {
+		return instance.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
 	}
 }
 
+export const authAPI = {
+	me() {
+		return instance.get(`auth/me`)
+			// .then(response => {
+			// 	if (response.data.resultCode === 0) {
+			// 		let {id, login, email} = response.data.data;
+			// 		this.props.setAuthUserData(id, login, email)
+			// 	}
+			//
+			// })
+	}
+
+}
