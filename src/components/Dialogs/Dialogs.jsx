@@ -7,6 +7,9 @@ import Message from './Message/Message';
 
 import s from './Dialogs.module.css';
 
+import {maxLength20, required} from "../../utils/validators";
+import {Textarea} from "../common/FormsControl/FormsControl";
+
 const Dialogs = (props) => {
 	let state = props.dialogsPage;
 	// let newMessageText = state.newMessageText;
@@ -31,7 +34,8 @@ const AddMessageForm = (props) => {
 	return (
 		<form onSubmit={props.handleSubmit}>
 			<div className="">
-				<Field component='textarea' name='newMessageText' placeholder='Enter your message'/>
+				<Field component={Textarea} name='newMessageText' placeholder='Enter your message'
+							 validate={[required, maxLength20]}/>
 			</div>
 			<div>
 				<button>Send</button>
