@@ -8,7 +8,6 @@ import {
 	requestUsers
 } from '../../redux/users-reducer';
 import Preloader from "../common/Preloader/Preloader";
-import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import {
 	getUsers,
@@ -58,6 +57,7 @@ class UsersContainer extends React.Component {
 // };
 
 let mapStateToProps = (state) => {
+	console.log('mapStateToProps USERS');
 	return {
 		users: getUsers(state),
 		pageSize: getPageSize(state),
