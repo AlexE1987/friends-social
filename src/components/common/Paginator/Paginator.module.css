@@ -1,0 +1,8 @@
+.selectedPage:hover,
+.pageNumber:hover {
+    cursor: pointer;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
