@@ -7,11 +7,10 @@ import {useState} from "react";
 import ProfileDataForm from "./ProfileDataForm";
 
 
-const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
 
 	let [editMode, setEditMode] = useState(false);
 	// let [status, setStatus] = useState(status);
-
 	if (!profile) {
 		return <Preloader/>
 	}
@@ -19,7 +18,14 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
 		if (e.target.files.length) {
 			savePhoto(e.target.files[0]);
 		}
+	}
 
+	const onSubmit = (formData) => {
+		saveProfile(formData).then(
+			() => {
+				setEditMode(false);
+			}
+		)
 	}
 	return (
 		<div className="">
@@ -27,7 +33,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
 				<img src={profile.photos.large || userPhoto} alt="Avatar" className={s.namePhoto}/>
 				{isOwner && <input type={'file'} onChange={onMainPhotoSelect}/>}
 				{editMode
-					? <ProfileDataForm profile={profile}/>
+					? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit}/>
 					: <ProfileData profile={profile} isOwner={isOwner} goToEditMode={() => setEditMode(true)}/>}
 				<ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
 			</div>
